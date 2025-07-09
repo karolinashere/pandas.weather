@@ -30,31 +30,26 @@ def append_to_excel(new_data):
 
     df_combined.to_excel("dane_pogodowe.xlsx", index=False)
 
-# def create_excel(data):
-#
-#     df = pd.DataFrame(data)
-#     df["czas"] = "01-01-1970 12:12:12"
-#     filtered = df[ df["cena"] < 15]
-#     only_names = df["nazwa"]
-#     sorted = df.sort_values(by="cena",ascending=True)
-#     countries = df["kraj"].unique()
-#     group_by_country = df["kraj"].value_counts().reset_index()
-#     group_by_country.columns = ["Kraj", "Liczba"]
-#
-#
-#
-#
-#
-# def create_excel(data):
-#     df = pd.DataFrame(data)
-#
-#
-# #create_excel(products)
-#
-# def read_excel():
-#
-#
-#     df = pd.concat([data_one, data_two])
-#     print(df)
+def append_to_csv(new_data):
+    df_new = pd.DataFrame([new_data])
 
-#read_excel()
+    if os.path.exists("dane_pogodowe.csv"):
+        df_existing = pd.read_csv ("dane_pogodowe.csv")
+        df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+
+    else:
+        df_combined = df_new
+
+    df_combined.to_csv("dane_pogodowe.csv", index=False)
+
+# lokalna X
+def fn1():
+    res = 10
+    print(res)
+#lokalna Y
+def fn2():
+    res = 90
+    print(res)
+
+fn1()
+fn2()
