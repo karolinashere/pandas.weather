@@ -19,10 +19,10 @@ def fetch_weather():
             "Odczuwalna": kelvin_to_celsius(weather["main"]["feels_like"]),
             "Ciśnienie": weather["main"]["pressure"],
             "Wilgotność": weather["main"]["humidity"],
-            "Zwykla temperatura": kelvin_to_celsius(weather["main"]["temp"]),
+            "Zwykła temperatura": kelvin_to_celsius(weather["main"]["temp"]),
             "Opis pogody": weather["weather"][0]["description"],
             "Miejsce": weather["name"],
-            "Prędkosc wiatru": wind_speed(weather["wind"]["speed"]),
+            "Prędkość wiatru": wind_speed(weather["wind"]["speed"]),
             "Data pomiaru": datetime.datetime.now()
 
         }
